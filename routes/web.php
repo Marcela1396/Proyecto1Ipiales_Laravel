@@ -34,13 +34,18 @@ Route::get('ofertas', function () {
 });
 
 Route::get('productos', function () {
-    return view('productos');
+    return view('inventario.productos');
+});
+
+Route::get('papeleria', function () {
+    return view('inventario.papeleria', array('id'=> '1', 
+                                              'nombre' => 'Cuadernos', 
+                                              'precio'=> '2000'));
 });
 
 // Rutas con parametros
 Route::get('servicios/{descripcion}', function ($descripcion) {
-    //return 'Descripción ' . $descripcion;
-    return "Descripción : {$descripcion}";
+    return view('servicios.operaciones', array('mensaje' => $descripcion));
 });
 
 /*
@@ -57,13 +62,10 @@ Route::get('productos/hogar', function () {
     return 'Productos del Hogar';
 });
 
-Route::get('productos/{id}/{descripcion?}', function ($id,$descripcion = null) {
-    if($descripcion){
-        return "Producto con id: {$id}, cuya descripcion es : {$descripcion}";
-    }
-    else{
-        return "Producto con id: {$id}, sin descripcion";
-    }
+Route::get('productos/{id}/{descripcion?}', function ($id, $descripcion = null) {
+    return view('inventario.descripcion')
+    ->with('id', $id)
+    ->with('descripcion', $descripcion);
 });
 
 
