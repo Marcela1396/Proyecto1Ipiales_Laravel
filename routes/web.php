@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Administracion;
+use App\Http\Controllers\Clientes\Clientes;
+use App\Http\Controllers\Inventario\Productos;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,29 +16,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('principal');
-});
+Route::get('/', [Administracion::class, 'index']); 
 
-Route::get('informativo', function () {
-    return view('administracion.informacion');
-});
 
-Route::get('clientes', function () {
-    return view('clientes.clientela') ;
-});
+Route::get('informativo', [Administracion::class, 'informacion'] );
 
-Route::get('clientes/preferidos', function () {
-    return view('clientes.preferenciales.favoritos') ;
-});
+Route::get('clientes', [Clientes::class, 'index'] );
 
-Route::get('ofertas', function () {
-    return view('promociones');
-});
+Route::get('clientes/preferidos', [Clientes::class, 'preferidos']);
 
-Route::get('productos', function () {
-    return view('inventario.productos');
-});
+Route::get('productos', [Productos::class, 'index'] );
+
+Route::get('productos/ofertas', [Productos::class, 'ofertas'] );
+
 
 Route::get('papeleria', function () {
     return view('inventario.papeleria', array('id'=> '1', 
