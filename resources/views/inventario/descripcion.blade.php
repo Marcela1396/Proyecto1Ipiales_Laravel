@@ -1,5 +1,9 @@
+@extends('principal')
+@section('contenido')
+
 <h1> Sin Usar blade </h1>
 <h1> Descripcion de productos </h1>
+
 
 <h2> Identificador : <?php echo $id ?> </h2>
 
@@ -26,3 +30,5 @@
 @for ($i = 0; $i <=10 ; $i++)
     <p> El valor actual es:  {!! $i !!} </p>
 @endfor
+
+@stop

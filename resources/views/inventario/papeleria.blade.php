@@ -1,3 +1,5 @@
+@extends('principal')
+@section('contenido')
 <h1> Papeleria </h1>
 
 <h1> {{ $msg }} </h1>
@@ -16,4 +18,5 @@
 @endforeach
 </ul>
 
+@stop
 

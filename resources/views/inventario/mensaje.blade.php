@@ -1,4 +1,4 @@
 @extends('principal')
 @section('contenido')
-<p> Ofertas del dia </p>
-@stop
+    <h1> Producto Registrado </h1>
+@stop 

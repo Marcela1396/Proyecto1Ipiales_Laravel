@@ -12,6 +12,14 @@ class Productos extends Controller
         return view('inventario.productos');
     }
 
+    public function formularioReg(){
+        return view('inventario.formulario');
+    }
+
+    public function registrar(){
+        return view('inventario.mensaje');
+    }
+
     public function ofertas(){
         return view('inventario.promociones');
     }

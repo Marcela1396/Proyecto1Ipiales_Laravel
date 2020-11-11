@@ -15,5 +15,4 @@ class Administracion extends Controller
         return view('administracion.informacion');
     }
 
-
 }

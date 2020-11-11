@@ -22,11 +22,17 @@ Route::get('/', [Administracion::class, 'index']);
 
 Route::get('informativo', [Administracion::class, 'informacion'] );
 
-Route::get('clientes', [Clientes::class, 'index'] );
+Route::get('clientes', [Clientes::class, 'index'] )->name('listado');
+
+Route::get('clientes/{id}/{nombre}/{edad}', [Clientes::class, 'detalle']);
 
 Route::get('clientes/preferidos', [Clientes::class, 'preferidos']);
 
 Route::get('productos', [Productos::class, 'index'] );
+
+Route::get('productos/registro', [Productos::class , 'formularioReg'])->name('registrarPro');
+
+Route::post('productos/registro', [Productos::class , 'registrar'])->name('registrado');
 
 Route::get('productos/ofertas', [Productos::class, 'ofertas'] );
 

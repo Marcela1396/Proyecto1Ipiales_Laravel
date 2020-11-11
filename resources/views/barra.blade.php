@@ -18,6 +18,7 @@
                     <a class="dropdown-item" href="{{ url('/productos/ofertas') }}">Ofertas del dia</a>
                     <a class="dropdown-item" href="{{ url('/productos/hogar') }}">Seccion Hogar</a>
                     <a class="dropdown-item" href="{{ url('/productos/papeleria') }}">Papeleria</a>
+                    <a class="dropdown-item" href="{{ route('registrarPro') }}">Registro</a>
                 </div>
             </li>
 
