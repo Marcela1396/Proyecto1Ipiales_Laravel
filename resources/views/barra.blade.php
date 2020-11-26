@@ -16,8 +16,8 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{{ url('/productos') }}">General</a>
                     <a class="dropdown-item" href="{{ url('/productos/ofertas') }}">Ofertas del dia</a>
-                    <a class="dropdown-item" href="{{ url('/productos/hogar') }}">Seccion Hogar</a>
-                    <a class="dropdown-item" href="{{ url('/productos/papeleria') }}">Papeleria</a>
+                    <a class="dropdown-item" href="{{ url('/productos/categorias') }}">Categorias</a>
+                    <hr>
                     <a class="dropdown-item" href="{{ route('registrarPro') }}">Registro</a>
                 </div>
             </li>

@@ -1,4 +1,4 @@
 @extends('principal')
 @section('contenido')
-    <h1> Productos del Hogar </h1>
+    <h1> Categorias de Productos </h1>
 @stop

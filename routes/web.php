@@ -37,10 +37,8 @@ Route::post('productos/registro', [Productos::class , 'registrar'])->name('regis
 Route::get('productos/ofertas', [Productos::class, 'ofertas'] );
 
 
-Route::get('productos/hogar', [Productos::class, 'hogar']);
+Route::get('productos/categorias', [Productos::class, 'categorias']);
 
-
-Route::get('productos/papeleria', [Productos::class, 'papeleria']);
 
 // Rutas con parametros
 Route::get('productos/{id}/{descripcion?}', [Productos::class, 'descripcion']);

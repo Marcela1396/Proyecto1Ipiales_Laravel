@@ -24,8 +24,8 @@ class Productos extends Controller
         return view('inventario.promociones');
     }
 
-    public function hogar(){
-        return view('inventario.hogar');
+    public function categorias(){
+        return view('inventario.categorias');
     }
 
     public function papeleria(){
