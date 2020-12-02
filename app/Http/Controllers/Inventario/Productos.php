@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Inventario;
-
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -9,7 +9,9 @@ class Productos extends Controller
 {
     //
     public function index(){
-        return view('inventario.productos');
+        // Select * from productos
+        $productos = DB::table('productos')->get();
+        return view('inventario.productos', ['productos' => $productos]);
     }
 
     public function formularioReg(){
