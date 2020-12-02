@@ -12,7 +12,7 @@
                     <h5 class="card-title">{{ $p->id}} : {{ $p->nombreProducto}} </h5>
                     <p class="card-text"> Cantidad: {{$p->cantidadProducto}} </p>
                     <p class="card-text"> Precio: {{$p->precioProducto}} </p>
-                    <p class="card-text"> Categoria: {{$p->categoria}} </p>
+                    <p class="card-text"> Categoria: {{$p->nombreCategoria}} </p>
                 </div>
             </div>
         </div>
