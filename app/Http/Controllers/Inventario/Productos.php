@@ -58,64 +58,32 @@ class Productos extends Controller
         $productos = DB::table('productos')
                     ->join('categorias', 'categoria', '=', 'categorias.id')
                     ->get();
-        return view('inventario.productos', ['productos' => $productos]);
+        return view('inventario.productos.productos', ['productos' => $productos]);
 
     }
 
     public function formularioReg(){
-        return view('inventario.formulario');
+        return view('inventario.productos.form_registro');
     }
 
     public function registrar(){
-        return view('inventario.mensaje');
+        return view('inventario.productos.mensaje');
     }
 
-    public function ofertas(){
-        return view('inventario.promociones');
+    public function actualizar(){
+        return view('inventario.productos.form_actualiza');
     }
 
-    public function categorias(){
-        return view('inventario.categorias');
+    public function eliminar(){
+        return view('inventario.productos.eliminar');
     }
 
-    public function papeleria(){
-        $papeleria = [
-            '123',
-            'Lapicero',
-            '1000'
-        ];
-        
-        $mensaje = "Bienvenidos a las ofertas de papeleria";
+    
 
-        $carton = [
-            '009',
-            'Carton Paja',
-            '2500'
-        ];
-        
-        /*
-        Opcion 1 de envio de datos a vista
-        return view('inventario.papeleria', 
-        [
-            'papel' => $papeleria,
-            'msg' => $mensaje,
-            'carton' => $carton
-        ]);
-        */
+    
+   
 
-        // Opcion 2 de envio de datos a vista
-        return view('inventario.papeleria')
-        ->with('papel', $papeleria)
-        ->with('msg',$mensaje)
-        ->with('carton', $carton);
-
-    }
-
-    public function descripcion($id, $descripcion = null){
-        return view('inventario.descripcion')
-        ->with('id', $id)
-        ->with('descripcion', $descripcion);
-    }
+    
 
 
 

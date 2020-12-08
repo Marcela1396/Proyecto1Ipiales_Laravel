@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Administracion;
 use App\Http\Controllers\Clientes\Clientes;
 use App\Http\Controllers\Inventario\Productos;
+use App\Http\Controllers\Inventario\Categorias;
 use App\Http\Controllers\Servicios;
 
 /*
@@ -22,22 +23,38 @@ Route::get('/', [Administracion::class, 'index']);
 
 Route::get('informativo', [Administracion::class, 'informacion'] );
 
+// Clientes
+
 Route::get('clientes', [Clientes::class, 'index'] )->name('listado');
 
 Route::get('clientes/{id}/{nombre}/{edad}', [Clientes::class, 'detalle']);
 
 Route::get('clientes/preferidos', [Clientes::class, 'preferidos']);
 
+// Productos
+
 Route::get('productos', [Productos::class, 'index'] );
 
-Route::get('productos/registro', [Productos::class , 'formularioReg'])->name('registrarPro');
+Route::get('productos/registro', [Productos::class , 'formularioReg'])->name('registrarProducto');
 
 Route::post('productos/registro', [Productos::class , 'registrar'])->name('registrado');
 
-Route::get('productos/ofertas', [Productos::class, 'ofertas'] );
+
+Route::get('productos/actualizar', [Productos::class, 'actualizar'])->name('actualizarProducto');
+
+Route::get('productos/eliminar', [Productos::class, 'eliminar'])->name('eliminarProducto');
 
 
-Route::get('productos/categorias', [Productos::class, 'categorias']);
+
+
+// Categorias 
+Route::get('categorias', [Categorias::class, 'index']);
+
+Route::get('categorias/registro', [Categorias::class, 'registrar'])->name('registrarCategoria');
+
+Route::get('categorias/actualizar', [Categorias::class, 'actualizar'])->name('actualizarCategoria');
+
+Route::get('categorias/eliminar', [Categorias::class, 'eliminar'])->name('eliminarCategoria');
 
 
 // Rutas con parametros

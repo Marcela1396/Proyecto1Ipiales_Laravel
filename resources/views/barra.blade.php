@@ -14,11 +14,11 @@
                 Productos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ url('/productos') }}">General</a>
-                    <a class="dropdown-item" href="{{ url('/productos/ofertas') }}">Ofertas del dia</a>
-                    <a class="dropdown-item" href="{{ url('/productos/categorias') }}">Categorias</a>
-                    <hr>
-                    <a class="dropdown-item" href="{{ route('registrarPro') }}">Registro</a>
+                    <a class="dropdown-item" href="{{ url('/productos') }}"> General</a> 
+                    <hr>                
+                    <a class="dropdown-item" href="{{ route('registrarProducto') }}">Registro</a>
+                    <a class="dropdown-item" href="{{ route('actualizarProducto') }}">Actualizar</a>
+                    <a class="dropdown-item" href="{{ route('eliminarProducto') }}">Eliminar</a>
                 </div>
             </li>
 
@@ -32,9 +32,20 @@
                 </div>
             </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ url('/servicios/domicilios') }}"> Servicios <span class="sr-only">(current)</span></a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categorias
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ url('/categorias') }}">General</a>
+                    <hr>
+                    <a class="dropdown-item" href="{{ route('registrarCategoria') }}">Registro</a>
+                    <a class="dropdown-item" href="{{ route('actualizarCategoria') }}">Actualizar</a>
+                    <a class="dropdown-item" href="{{ route('eliminarCategoria') }}">Eliminar</a>
+                </div>
             </li>
+
+    
             
         </ul>
     </div>
