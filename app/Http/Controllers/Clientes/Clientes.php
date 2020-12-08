@@ -27,7 +27,20 @@ class Clientes extends Controller
                                         ));
     }
 
-    public function preferidos(){
-        return view('clientes.preferenciales.favoritos') ;
+    public function formularioReg(){
+        return view('clientes.form_registro') ;
     }
+
+    public function registrar(){
+        return view('clientes.form_registro') ;
+    }
+
+    public function actualizar(){
+        return view('clientes.form_actualiza') ;
+    }
+
+    public function eliminar(){
+        return view('clientes.eliminar') ;
+    }
+
 }

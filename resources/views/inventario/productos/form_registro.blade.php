@@ -2,15 +2,12 @@
 @section('contenido')
     <h1> Formulario de Registro </h1>
 
-    @php    
-        $producto = 'Manzanas';
-    @endphp
-    <form action="{{ route('registrado')}}" method= "POST">
+    <form action="{{ route('registrarProducto')}}" method= "POST">
         @csrf
         <!-- Etiquetas de tipo text con un value asignado -->
         <div class="form-group">
             <label for="nombrePro">Nombre </label>
-            <input type="text" id="nombrePro" name="nombrePro" value ="{{ $producto }}" class="form-control" placeholder="Nombre" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <input type="text" id="nombrePro" name="nombrePro"  class="form-control" placeholder="Nombre" aria-label="Recipient's username" aria-describedby="basic-addon2">
         </div>
 
         <!-- Etiquetas de tipo text sin un value asignado -->

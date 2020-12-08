@@ -25,32 +25,34 @@ Route::get('informativo', [Administracion::class, 'informacion'] );
 
 // Clientes
 
-Route::get('clientes', [Clientes::class, 'index'] )->name('listado');
+Route::get('clientes', [Clientes::class, 'index'] )->name('listadoClientes');
 
-Route::get('clientes/{id}/{nombre}/{edad}', [Clientes::class, 'detalle']);
+Route::get('clientes/registro', [Clientes::class , 'formularioReg'])->name('form_registroCliente');
 
-Route::get('clientes/preferidos', [Clientes::class, 'preferidos']);
+Route::post('clientes/registro', [Clientes::class, 'registrar'])->name('registrarCliente');
+
+Route::get('clientes/actualizar', [Clientes::class, 'actualizar'])->name('actualizarCliente');
+
+Route::get('clientes/eliminar', [Clientes::class, 'eliminar'])->name('eliminarCliente');
 
 // Productos
 
-Route::get('productos', [Productos::class, 'index'] );
+Route::get('productos', [Productos::class, 'index'] )->name('listadoProductos');;
 
-Route::get('productos/registro', [Productos::class , 'formularioReg'])->name('registrarProducto');
+Route::get('productos/registro', [Productos::class , 'formularioReg'])->name('form_registroProducto');
 
-Route::post('productos/registro', [Productos::class , 'registrar'])->name('registrado');
-
+Route::post('productos/registro', [Productos::class , 'registrar'])->name('registrarProducto');
 
 Route::get('productos/actualizar', [Productos::class, 'actualizar'])->name('actualizarProducto');
 
 Route::get('productos/eliminar', [Productos::class, 'eliminar'])->name('eliminarProducto');
 
-
-
-
 // Categorias 
 Route::get('categorias', [Categorias::class, 'index']);
 
-Route::get('categorias/registro', [Categorias::class, 'registrar'])->name('registrarCategoria');
+Route::get('categorias/registro', [Categorias::class , 'formularioReg'])->name('form_registroCategoria');
+
+Route::post('categorias/registro', [Categorias::class, 'registrar'])->name('registrarCategoria');
 
 Route::get('categorias/actualizar', [Categorias::class, 'actualizar'])->name('actualizarCategoria');
 

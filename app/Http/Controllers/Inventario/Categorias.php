@@ -10,9 +10,14 @@ class Categorias extends Controller
 {
     public function index(){
         $categorias = DB::table('categorias')->get();
-        return view('inventario.categorias.listado', ['categorias' => $categorias]);
-        
+        return view('inventario.categorias.listado', ['categorias' => $categorias]);   
     }
+
+    public function formularioReg()
+    {
+        return view('inventario.categorias.form_registro');
+    }
+
 
     public function registrar()
     {
