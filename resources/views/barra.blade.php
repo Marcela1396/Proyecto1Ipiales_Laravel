@@ -28,6 +28,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{{ url('/clientes') }}">Listado</a>
+                    <hr>
                     <a class="dropdown-item" href="{{ route('form_registroCliente') }}">Registro</a>
                     <a class="dropdown-item" href="{{ route('actualizarCliente') }}">Actualizar</a>
                     <a class="dropdown-item" href="{{ route('eliminarCliente') }}">Eliminar</a>

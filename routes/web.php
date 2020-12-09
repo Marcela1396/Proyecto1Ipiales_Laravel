@@ -48,7 +48,7 @@ Route::get('productos/actualizar', [Productos::class, 'actualizar'])->name('actu
 Route::get('productos/eliminar', [Productos::class, 'eliminar'])->name('eliminarProducto');
 
 // Categorias 
-Route::get('categorias', [Categorias::class, 'index']);
+Route::get('categorias', [Categorias::class, 'index'])->name('listadoCategorias');
 
 Route::get('categorias/registro', [Categorias::class , 'formularioReg'])->name('form_registroCategoria');
 
