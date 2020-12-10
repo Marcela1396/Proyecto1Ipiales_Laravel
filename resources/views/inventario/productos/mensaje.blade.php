@@ -1,10 +1,5 @@
 @extends('principal')
 @section('contenido')
-    <h1> Producto Registrado </h1>
-    @php
-        $nombrePro = $_POST['nombrePro']
-    @endphp
-
-    <h1> Nombre Producto: {{ $nombrePro }} </h1>
-
+    <h3> Producto no Encontrado </h3>
+    <a href="{{route('form_consultaProducto')}}"> Regresar </a>
 @stop 

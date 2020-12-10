@@ -37,15 +37,28 @@ Route::get('clientes/eliminar', [Clientes::class, 'eliminar'])->name('eliminarCl
 
 // Productos
 
-Route::get('productos', [Productos::class, 'index'] )->name('listadoProductos');;
+Route::get('productos', [Productos::class, 'index'] )->name('listadoProductos');
+
+Route::get('productos/detalle/{id}', [Productos::class, 'detalle'] )->name('detalleProducto');;
 
 Route::get('productos/registro', [Productos::class , 'formularioReg'])->name('form_registroProducto');
 
 Route::post('productos/registro', [Productos::class , 'registrar'])->name('registrarProducto');
 
-Route::get('productos/actualizar', [Productos::class, 'actualizar'])->name('actualizarProducto');
+Route::get('productos/actualizar/{id}', [Productos::class, 'formularioAct'])->name('form_actualizaProducto');
 
-Route::get('productos/eliminar', [Productos::class, 'eliminar'])->name('eliminarProducto');
+Route::post('productos/actualizar/{id}', [Productos::class, 'actualizar'])->name('actualizarProducto');
+
+Route::get('productos/eliminar/{id}', [Productos::class, 'eliminar'])->name('eliminarProducto');
+
+Route::get('productos/consulta', [Productos::class, 'form_consulta'])
+	->name('form_consultaProducto');
+
+Route::post('productos/consulta', [Productos::class, 'consultar'])
+    ->name('consulta_productos');
+
+
+    
 
 // Categorias 
 Route::get('categorias', [Categorias::class, 'index'])->name('listadoCategorias');

@@ -17,8 +17,7 @@
                     <a class="dropdown-item" href="{{ url('/productos') }}"> Listado</a> 
                     <hr>                
                     <a class="dropdown-item" href="{{ route('form_registroProducto') }}">Registro</a>
-                    <a class="dropdown-item" href="{{ route('actualizarProducto') }}">Actualizar</a>
-                    <a class="dropdown-item" href="{{ route('eliminarProducto') }}">Eliminar</a>
+                    <a class="dropdown-item" href="{{ route('form_consultaProducto') }}">Consultar</a>
                 </div>
             </li>
 
@@ -30,7 +29,6 @@
                     <a class="dropdown-item" href="{{ url('/clientes') }}">Listado</a>
                     <hr>
                     <a class="dropdown-item" href="{{ route('form_registroCliente') }}">Registro</a>
-                    <a class="dropdown-item" href="{{ route('actualizarCliente') }}">Actualizar</a>
                     <a class="dropdown-item" href="{{ route('eliminarCliente') }}">Eliminar</a>
                 </div>
             </li>
@@ -43,7 +41,6 @@
                     <a class="dropdown-item" href="{{ url('/categorias') }}">Listado</a>
                     <hr>
                     <a class="dropdown-item" href="{{ route('form_registroCategoria') }}">Registro</a>
-                    <a class="dropdown-item" href="{{ route('actualizarCategoria') }}">Actualizar</a>
                     <a class="dropdown-item" href="{{ route('eliminarCategoria') }}">Eliminar</a>
                 </div>
             </li>
