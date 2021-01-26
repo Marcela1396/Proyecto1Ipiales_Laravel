@@ -21,33 +21,39 @@ class Categorias extends Controller
         return view('inventario.categorias.listado', ['categorias' => $categorias]);   
     }
 
-    public function formularioReg()
-    {
-        //Mostrar el formulario de registro y la captura de datos
+    public function form_registro()  {
         return view('inventario.categorias.form_registro');
     }
 
 
-    public function registrar(Request $request)
-    {
-        // Registro de una Categoria en la base de datos a traves del Modelo
+    public function registrar(Request $request) {
         $category = new Categoria();
         $category->nombreCategoria = $request->input('nombreCat');
         $category->descripcion = $request->input('descripcionCat');
         $category->save();
-        return redirect()->route('listadoCategorias');
+        return redirect()->route('listado_categorias');
     }
 
-    public function actualizar()
+    public function form_actualiza($id){
+        // Funcion que genera el formulario de actualizacion con base en la categoria seleccionada
+        $categoria = Categoria::findOrFail($id);
+        return view ('inventario.categorias.form_actualiza', compact('categoria'));
+    }
+
+    public function actualizar(Request $request, $id)
     {
-        return view('inventario.categorias.form_actualiza');
+        $c = Categoria::findOrFail($id);
+        $c->nombreCategoria = $request->input('nombreCat');
+        $c->descripcion = $request->input('descripcionCat');
+        $c->save();
+        return redirect()->route('listado_categorias');  
     }
 
-    public function eliminar()
+    public function eliminar($id)
     {
-        return view('inventario.categorias.eliminar');
+        $c = Categoria::findOrFail($id);
+        $c->delete();
+        return redirect()->route('listado_categorias');
     }
-
-
 
 }

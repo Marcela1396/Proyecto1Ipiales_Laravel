@@ -20,7 +20,6 @@ class CreateClientesTable extends Migration
             $table->string('direccionCliente', 45);
             $table->string('telefonoCliente', 15);
             $table->char('generoCliente', 1);
-            $table->string('fotoCliente', 100);   // Varchar 45
             $table->timestamps();
         });
     }

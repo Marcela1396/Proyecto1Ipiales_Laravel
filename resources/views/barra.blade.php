@@ -28,8 +28,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{{ url('/clientes') }}">Listado</a>
                     <hr>
-                    <a class="dropdown-item" href="{{ route('form_registroCliente') }}">Registro</a>
-                    <a class="dropdown-item" href="{{ route('eliminarCliente') }}">Eliminar</a>
+                    <a class="dropdown-item" href="{{ route('form_registroCli') }}">Registro</a>
                 </div>
             </li>
 
@@ -41,7 +40,6 @@
                     <a class="dropdown-item" href="{{ url('/categorias') }}">Listado</a>
                     <hr>
                     <a class="dropdown-item" href="{{ route('form_registroCategoria') }}">Registro</a>
-                    <a class="dropdown-item" href="{{ route('eliminarCategoria') }}">Eliminar</a>
                 </div>
             </li>
 

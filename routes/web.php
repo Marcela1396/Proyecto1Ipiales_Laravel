@@ -24,16 +24,25 @@ Route::get('/', [Administracion::class, 'index']);
 Route::get('informativo', [Administracion::class, 'informacion'] );
 
 // Clientes
+Route::get('clientes', [Clientes::class, 'index'])
+	->name('listado_clientes');
 
-Route::get('clientes', [Clientes::class, 'index'] )->name('listadoClientes');
+Route::get('clientes/registrar', [Clientes::class, 'form_registro'])
+	->name('form_registroCli');
 
-Route::get('clientes/registro', [Clientes::class , 'formularioReg'])->name('form_registroCliente');
+Route::post('clientes/registrar', [Clientes::class, 'registrar'])
+	->name('registrar_cliente');
 
-Route::post('clientes/registro', [Clientes::class, 'registrar'])->name('registrarCliente');
+Route::get('clientes/actualizar/{id}', [Clientes::class, 'form_actualiza'])
+	->name('form_actualizaCli');
 
-Route::get('clientes/actualizar', [Clientes::class, 'actualizar'])->name('actualizarCliente');
+Route::post('clientes/actualizar/{id}', [Clientes::class, 'actualizar'])
+	->name('actualiza_cliente');
 
-Route::get('clientes/eliminar', [Clientes::class, 'eliminar'])->name('eliminarCliente');
+Route::get('clientes/eliminar/{id}', [Clientes::class, 'eliminar'])
+	->name('elimina_Cliente');
+
+
 
 // Productos
 
@@ -61,15 +70,23 @@ Route::post('productos/consulta', [Productos::class, 'consultar'])
     
 
 // Categorias 
-Route::get('categorias', [Categorias::class, 'index'])->name('listadoCategorias');
+Route::get('categorias', [Categorias::class, 'index'])->name('listado_categorias');
 
-Route::get('categorias/registro', [Categorias::class , 'formularioReg'])->name('form_registroCategoria');
+Route::get('categorias/registro', [Categorias::class, 'form_registro'])
+        ->name('form_registroCategoria');
 
-Route::post('categorias/registro', [Categorias::class, 'registrar'])->name('registrarCategoria');
+Route::post('categorias/registro', [Categorias::class, 'registrar'])
+        ->name('registrarCategoria');
 
-Route::get('categorias/actualizar', [Categorias::class, 'actualizar'])->name('actualizarCategoria');
+Route::get('categorias/actualizar/{id}', [Categorias::class, 'form_actualiza'])
+		->name('form_actualizaCategoria');
+		
+Route::post('categorias/actualizar/{id}', [Categorias::class, 'actualizar'])
+    	->name('actualizarCategoria');
 
-Route::get('categorias/eliminar', [Categorias::class, 'eliminar'])->name('eliminarCategoria');
+Route::get('categorias/eliminar/{id}', [Categorias::class, 'eliminar'])
+		->name('eliminarCategoria');
+		
 
 
 // Rutas con parametros
