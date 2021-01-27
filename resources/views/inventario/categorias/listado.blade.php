@@ -2,7 +2,11 @@
 @section('contenido')
 
 <h1> Categorias de productos </h1>
-
+<div align="right">
+    <a href="{{route('exportar_Excel')}}" class="btn btn-primary"> Exportar a Excel </a>
+    <a href="{{route('descargar_PDF')}}" class="btn btn-danger"> Descargar en PDF </a>
+</div>
+<br>
 <table class="table">
     <thead>
         <tr>

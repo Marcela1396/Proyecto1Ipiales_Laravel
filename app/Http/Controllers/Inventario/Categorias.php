@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Categoria;
 
+use App\Exports\CategoriasExport;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade as PDF;
+
 class Categorias extends Controller
 {
     public function index(){
@@ -55,5 +59,33 @@ class Categorias extends Controller
         $c->delete();
         return redirect()->route('listado_categorias');
     }
+
+    public function descarga_Excel(){
+        return Excel::download(new CategoriasExport, 'categorias.xlsx');
+    }
+
+    public function descarga_PDF(){
+        $categorias = Categoria::all();
+        $pdf = \PDF::loadView('inventario.categorias.reportePDF', ['categorias' => $categorias]);
+        return $pdf->download('categorias.pdf');
+    }
+
+    public function recibirDatos(Request $request){
+        $nombre = $request->input('nombre');
+        $descripcion = $request->input('descripcion');
+        $resultado = "Categoria: $nombre , Descripcion: $descripcion";
+        return json_encode(array(
+            'status' => 200,
+            'response' => array(
+                'mensaje' => $resultado
+            )
+        ));
+    }
+
+    public function enviarDatos(){
+        $categorias = Categoria::all();
+        return response()->json($categorias); 
+    }
+
 
 }
