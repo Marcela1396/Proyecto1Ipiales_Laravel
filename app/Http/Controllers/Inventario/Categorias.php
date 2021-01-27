@@ -71,9 +71,18 @@ class Categorias extends Controller
     }
 
     public function recibirDatos(Request $request){
+        /*
         $nombre = $request->input('nombre');
         $descripcion = $request->input('descripcion');
         $resultado = "Categoria: $nombre , Descripcion: $descripcion";
+        */
+        $category = new Categoria();
+        $category->nombreCategoria = $request->input('nombre');
+        $category->descripcion = $request->input('descripcion');
+        if($category->save()){
+            $resultado = 'Insertado';
+        }
+            
         return json_encode(array(
             'status' => 200,
             'response' => array(
